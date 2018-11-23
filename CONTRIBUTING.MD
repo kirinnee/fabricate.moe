@@ -105,20 +105,29 @@ Commit message should always the follow the format (replace <> with actual words
 ````
 Please follow these rules
 1. **<tag>** has to start with caps
-`[Fix]` :heavy_check_mark:
-`[fix]` :x:
+
+    `[Fix]` :heavy_check_mark:
+
+    `[fix]` :x:
 
 2. **<title>** Title has to start with caps
-`[Fix] -Enforced email pattern` :heavy_check_mark:
- `[Fix] - enforced email pattern`:x:
+
+    `[Fix] -Enforced email pattern` :heavy_check_mark:
+    
+    `[Fix] - enforced email pattern`:x:
 
 3. **<tag>** and **<title>** should not exceed 50 characters
-`[Improve] - Change the impl of search` :heavy_check_mark:
-`[Improve] - Change the implementation of search from iteration function to Red-Black-Tree Traversal` :x:
+
+    `[Improve] - Change the impl of search` :heavy_check_mark:
+    
+    `[Improve] - Change the implementation of search from iteration function to Red-Black-Tree Traversal` :x:
 
 4. Use only approved short forms (Check them at [glossary](#Glossary))
-`[Improve] - Change impl for search` :heavy_check_mark:
-`[Improve] - Change search 2 r-b-t` :x:
+
+    `[Improve] - Change impl for search` :heavy_check_mark:
+    
+    `[Improve] - Change search 2 r-b-t` :x:
+
 
 ### Pull Requests
 
@@ -131,36 +140,61 @@ The pull request title has to follow the format:
 2. Title can be descriptive, it should cover the branch's purpose in 1 line (what, not why or how)
 
 ### Branch Naming
+
 - use slug instead of underscore or Pascal case
-`72-fix-scrollbar` :heavy_check_mark:
-`72FixScrollbar` :x:
-`72_fix_scrollbar` :x:
+
+    `72-fix-scrollbar` :heavy_check_mark:
+
+    `72FixScrollbar` :x:    
+
+    `72_fix_scrollbar` :x:
+
 
 - all lower case
-`66-change-repository-implementation` :heavy_check_mark:
-`66-Change-repostory-implementation` :x:
-`66-Change-Repo-Implementation` :x:
+
+    `66-change-repository-implementation` :heavy_check_mark:
+
+    `66-Change-repostory-implementation` :x:
+
+    `66-Change-Repo-Implementation` :x:
+
 
 - prepend branch with work item number
-`12-add-character-handler` :heavy_check_mark:
-`add-character-handler` :x:
+
+    `12-add-character-handler` :heavy_check_mark:
+
+    `add-character-handler` :x:
+
 
 ## Code 
 ### Style
 - Soft Tabs  - tabs that convert into space. 
-`\s\s\s\s` :heavy_check_mark:
-`\t` :x:
+
+    `\s\s\s\s` :heavy_check_mark:
+
+    `\t` :x:
+
 
 - 1 tab = 4 
-` \s\s\s\sfunction` :heavy_check_mark:
-`\s\sfunction`:x:
+
+    ` \s\s\s\sfunction` :heavy_check_mark:
+
+    `\s\sfunction`:x:
+
 - LF  - Line Feed
-`\r\n` :x:
-`\n` :heavy_check_mark:
-`\r` :x:
-`\n\r` :x: 
+
+    `\r\n` :x:
+
+    `\n` :heavy_check_mark:
+
+    `\r` :x:
+
+    `\n\r` :x: 
+
+
 - Curly braces
-**Place open curly brace on line of function** :heavy_check_mark:
+
+    **Place open curly brace on line of function** :heavy_check_mark:
    ```ts
    function x(){
    }
@@ -171,7 +205,9 @@ The pull request title has to follow the format:
     {
     }
     ```
+    
 - Array Formatting
+
     **Prepend commas** :x:
     ```ts
     let x:number[] = 
@@ -180,6 +216,7 @@ The pull request title has to follow the format:
         ,3
         ];
     ```
+    
     **Open close different line** :heavy_check_mark:
     ```ts
     let x:number[] = [
@@ -188,6 +225,7 @@ The pull request title has to follow the format:
             3
       ];
     ```
+    
     **Trailing commas** :x:
     ```ts
     let x:number[] = [
@@ -196,39 +234,49 @@ The pull request title has to follow the format:
             3,
       ];
     ```
+    
     **Same line** :x:
     ```ts
     let x:number[] = [1,2,3];
     ```
+    
 - Semicolon
+
     **Always end with semi-colon** :heavy_check_mark:
     ```ts
     let x:number = 5;
     ```
+
     **Don't end with semi-colon** :x:
     ```ts
         let x:number = 5
     ```
+    
 - Infinite loop
+
     **for** :heavy_check_mark:
     ```ts
     for(;;){
 	
       }
     ``` 
+
     **while** :x:
     ```ts
      while(true){
 	
       }  
     ```
+    
 - Single line branch
+
     **No curly braces** :heavy_check_mark:
     ```ts
   let x:number = 0;  
   if (true) console.log("true");
     while(x>0) x++;
     ```
+
     **Curly Braces** :x:
     ```ts
     let x:number =0;
@@ -237,6 +285,7 @@ The pull request title has to follow the format:
     ```
     
 - Chained methods
+
     **Additional Method new line** :heavy_check_mark:
     ```ts
     let x:number = [1,2,3,4,5].map(s => s + 1)
@@ -244,6 +293,7 @@ The pull request title has to follow the format:
             .map(s => s +1)
             .reduce( (a,b) => a + b);
     ```
+    
     **Initial Method new line** :heavy_check_mark:
     ```ts
      let x:number = [1,2,3,4,5]
@@ -252,6 +302,7 @@ The pull request title has to follow the format:
                 .map(s => s +1)
                 .reduce( (a,b) => a + b);
     ```
+
     **All same line** :x:
      ```ts
         let x:number = [1,2,3,4,5].map(s => s + 1).filter(s => s % 2 === 0).map(s => s +1).reduce( (a,b) => a + b);
@@ -259,6 +310,7 @@ The pull request title has to follow the format:
 
     
 - Object Literals (Javscript/Typescript)
+
     **Comma at end** :heavy_check_mark:
     ```ts
     let x:any = {
@@ -266,10 +318,12 @@ The pull request title has to follow the format:
          b: "b"
       };
     ```
+
     **Single line if simple** :heavy_check_mark: 
     ```ts
      let x: any = { a: "a"};
     ```   
+
     **Trailing Commas** :x:
     ```ts
     let x: any = {	 
@@ -285,68 +339,103 @@ The pull request title has to follow the format:
           , c:"c"
           }
     ```
+
 - Array Creation (Javascript/Typescript)
+
     **Array Literal** :heavy_check_mark:
     ```ts
     let x: number[] = [];
     ```
+
     **Constructor Initialization** :x:
+    
     ```ts
     let x: number[] = new Array();
     ```
+
 - Error Throwing (Javascript/Typescript)
+
     **Throw Error Object** :heavy_check_mark:
     ```ts
     throw new Error("Null exception");
     ```
+    
     **Throw strings** :x:
     ```ts
     throw "Null exception";
     ```
+
 - Standard Library Usage (Javascript/Typescript)
+
     **Use es6 standard library** :x:
     ```ts
     let x : number[] = [1,2,3].map( x=> x+1).filter(x=> x%2);
     ```
+    
     **Use Core Library** :heavy_check_mark:
     ```ts
     let x : number[] = [1,2,3].Map( x=> x+1).Where(x=> x%2);
     ```
+
 ### Naming 
 
 - Constants - all Caps
-`const LEFT = "left` :heavy_check_mark:
-`const left = "left` :x:
+
+    `const LEFT = "left` :heavy_check_mark:
+
+    `const left = "left` :x:
+
 
 - Functions and Class Methods - Pascal Case
-`function Create(){}` :heavy_check_mark:
-`function create(){}` :x:
+
+    `function Create(){}` :heavy_check_mark:
+
+    `function create(){}` :x:
+
 
 - File Names - Pascal Case
-`RealCharacter.js` :heavy_check_mark:
-`realCharacter.js` :x:
+
+    `RealCharacter.js` :heavy_check_mark:
+
+    `realCharacter.js` :x:
+
 
 - Global Variable - Pascal Case
-`let RealTime = 5` :heavy_check_mark:
-`let realTime = 5` :x:
+
+    `let RealTime = 5` :heavy_check_mark:
+
+    `let realTime = 5` :x:
+
 
 - Local Variable - Camel Case
-`let localTime = 5` :heavy_check_mark:
-`let LocalTime = 5` :x:
+
+    `let localTime = 5` :heavy_check_mark:
+
+    `let LocalTime = 5` :x:
+
 
 - Properties - Camel Case
-`public legLength: string;` :heavy_check_mark:
-`public LegLength:string;` :x:
+
+    `public legLength: string;` :heavy_check_mark:
+
+    `public LegLength:string;` :x:
+
 
 - Function parameters - Camel Case
-`function Create(name:string, icNumber:string)` :heavy_check_mark:
-`function Create(name:string, IcNumber:string)` :x:
+
+    `function Create(name:string, icNumber:string)` :heavy_check_mark:
+
+    `function Create(name:string, IcNumber:string)` :x:
 
 - Class and Interface name - Pascal Case
-`class Father {` :heavy_check_mark:
-`interface IWriter{` :heavy_check_mark:
-`class globFactory{` :x:
-`class iWriter` :x:
+
+    `class Father {` :heavy_check_mark:
+    
+    `interface IWriter{` :heavy_check_mark:
+    
+    `class globFactory{` :x:
+    
+    `class iWriter` :x:
      
 # Glossary
 
